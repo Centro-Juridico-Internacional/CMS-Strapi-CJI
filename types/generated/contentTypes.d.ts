@@ -676,7 +676,14 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::category.category'
     >;
-    contenido: Schema.Attribute.RichText & Schema.Attribute.Required;
+    contenido: Schema.Attribute.RichText &
+      Schema.Attribute.Required &
+      Schema.Attribute.CustomField<
+        'plugin::ckeditor5.CKEditor',
+        {
+          preset: 'defaultHtml';
+        }
+      >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -16,10 +16,6 @@
       "minLength": 5,
       "required": true
     },
-    "contenido": {
-      "type": "richtext",
-      "required": true
-    },
     "autor": {
       "type": "relation",
       "relation": "manyToOne",
@@ -31,6 +27,14 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "mappedBy": "noticias"
+    },
+    "contenido": {
+      "type": "customField",
+      "customField": "plugin::ckeditor5.CKEditor",
+      "options": {
+        "preset": "defaultHtml"
+      },
+      "required": true
     },
     "imagenes": {
       "type": "media",
