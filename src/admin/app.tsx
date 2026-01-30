@@ -176,8 +176,8 @@ export default {
       es: {
         "app.components.LeftMenu.navbrand.title": "Panel de Control",
         "app.components.LeftMenu.navbrand.workplace": "Espacio de Trabajo",
-        "global.home": "Casa CJI",
-        "HomePage.head.title": "Casa CJI",
+        "global.home": "CMS Strapi CJI",
+        "HomePage.head.title": "CMS Strapi CJI",
         "HomePage.header.title": "Hola {name}",
         "HomePage.header.subtitle": "Bienvenido a tu panel de administración",
         "app.components.HomePage.welcomeMessage":

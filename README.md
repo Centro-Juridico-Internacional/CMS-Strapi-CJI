@@ -1,6 +1,6 @@
-# 🗄️ Actualidad Jurídica - Backend
+# 🗄️ CMS Strapi CJI - Backend
 
-Este es el sistema de gestión de contenidos (CMS) y API del proyecto **Actualidad Jurídica**, potenciado por **Strapi v5**. Actúa como la fuente de verdad para todos los datos que consume el frontend.
+Este es el sistema de gestión de contenidos (CMS) y API del proyecto **CMS Strapi CJI**, potenciado por **Strapi v5**. Actúa como la fuente de verdad para todos los datos que consume el frontend.
 
 ## 🏗️ Arquitectura & Tecnologías
 
