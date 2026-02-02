@@ -17,6 +17,7 @@
     },
     "slug": {
       "type": "uid",
+      "targetField": "link",
       "required": true
     },
     "imagen": {
@@ -24,8 +25,7 @@
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     }
   }
