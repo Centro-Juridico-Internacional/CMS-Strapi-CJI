@@ -481,15 +481,15 @@ export interface ApiBannerBanner extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     imagen: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::banner.banner'
     > &
       Schema.Attribute.Private;
-    nombre: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'nombre'> & Schema.Attribute.Required;
+    slug: Schema.Attribute.UID & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

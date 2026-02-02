@@ -11,13 +11,12 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "nombre": {
+    "link": {
       "type": "string",
       "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "nombre",
       "required": true
     },
     "imagen": {
