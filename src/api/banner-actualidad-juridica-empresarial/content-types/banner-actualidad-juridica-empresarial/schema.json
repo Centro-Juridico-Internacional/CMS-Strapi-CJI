@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "banners",
+  "collectionName": "banner_actualidad_juridica_empresarials",
   "info": {
-    "singularName": "banner",
-    "pluralName": "banners",
-    "displayName": "Banner AC Colombia Lawyers"
+    "singularName": "banner-actualidad-juridica-empresarial",
+    "pluralName": "banner-actualidad-juridica-empresarials",
+    "displayName": "Banner Actualidad Juridica Empresarial"
   },
   "options": {
     "draftAndPublish": true
@@ -17,6 +17,7 @@
     },
     "slug": {
       "type": "uid",
+      "targetField": "link",
       "required": true
     },
     "imagen": {
@@ -24,8 +25,7 @@
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     }
   }

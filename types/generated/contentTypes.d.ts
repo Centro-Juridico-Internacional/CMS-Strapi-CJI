@@ -465,6 +465,37 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBannerActualidadJuridicaEmpresarialBannerActualidadJuridicaEmpresarial
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'banner_actualidad_juridica_empresarials';
+  info: {
+    displayName: 'Banner Actualidad Juridica Empresarial';
+    pluralName: 'banner-actualidad-juridica-empresarials';
+    singularName: 'banner-actualidad-juridica-empresarial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::banner-actualidad-juridica-empresarial.banner-actualidad-juridica-empresarial'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'link'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   collectionName: 'banners';
   info: {
@@ -479,7 +510,7 @@ export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    imagen: Schema.Attribute.Media<'images' | 'files', true> &
+    imagen: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     link: Schema.Attribute.String & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -1249,6 +1280,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::author.author': ApiAuthorAuthor;
+      'api::banner-actualidad-juridica-empresarial.banner-actualidad-juridica-empresarial': ApiBannerActualidadJuridicaEmpresarialBannerActualidadJuridicaEmpresarial;
       'api::banner.banner': ApiBannerBanner;
       'api::banners-evento.banners-evento': ApiBannersEventoBannersEvento;
       'api::capsulas-legales-url.capsulas-legales-url': ApiCapsulasLegalesUrlCapsulasLegalesUrl;
