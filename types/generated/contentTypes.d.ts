@@ -465,10 +465,10 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiBannerBanner extends Struct.SingleTypeSchema {
+export interface ApiBannerBanner extends Struct.CollectionTypeSchema {
   collectionName: 'banners';
   info: {
-    displayName: 'Banner';
+    displayName: 'Banner AC Colombia Lawyers';
     pluralName: 'banners';
     singularName: 'banner';
   };
