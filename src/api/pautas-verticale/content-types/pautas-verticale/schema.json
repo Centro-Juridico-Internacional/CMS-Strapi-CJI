@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "imagenes_pautas",
+  "collectionName": "pautas_verticales",
   "info": {
-    "singularName": "imagenes-pauta",
-    "pluralName": "imagenes-pautas",
-    "displayName": "Pautas Horizontales"
+    "singularName": "pautas-verticale",
+    "pluralName": "pautas-verticales",
+    "displayName": "Pautas Verticales"
   },
   "options": {
     "draftAndPublish": true
@@ -20,8 +20,7 @@
       "multiple": false,
       "required": true,
       "allowedTypes": [
-        "images",
-        "files"
+        "images"
       ]
     }
   }

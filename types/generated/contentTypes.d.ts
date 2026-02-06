@@ -663,7 +663,7 @@ export interface ApiImagenesPautaImagenesPauta
   extends Struct.CollectionTypeSchema {
   collectionName: 'imagenes_pautas';
   info: {
-    displayName: 'ImagenesPauta';
+    displayName: 'Pautas Horizontales';
     pluralName: 'imagenes-pautas';
     singularName: 'imagenes-pauta';
   };
@@ -733,6 +733,36 @@ export interface ApiNewNew extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     UrlYoutube: Schema.Attribute.String;
+  };
+}
+
+export interface ApiPautasVerticalePautasVerticale
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'pautas_verticales';
+  info: {
+    displayName: 'Pautas Verticales';
+    pluralName: 'pautas-verticales';
+    singularName: 'pautas-verticale';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::pautas-verticale.pautas-verticale'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
   };
 }
 
@@ -1287,6 +1317,7 @@ declare module '@strapi/strapi' {
       'api::entrevistas-url.entrevistas-url': ApiEntrevistasUrlEntrevistasUrl;
       'api::imagenes-pauta.imagenes-pauta': ApiImagenesPautaImagenesPauta;
       'api::new.new': ApiNewNew;
+      'api::pautas-verticale.pautas-verticale': ApiPautasVerticalePautasVerticale;
       'api::revista-pdf.revista-pdf': ApiRevistaPdfRevistaPdf;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
