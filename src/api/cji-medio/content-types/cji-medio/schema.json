@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "cji_medios",
+  "info": {
+    "singularName": "cji-medio",
+    "pluralName": "cji-medios",
+    "displayName": "CJI medios"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "imagen": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "link",
+      "required": true
+    }
+  }
+}

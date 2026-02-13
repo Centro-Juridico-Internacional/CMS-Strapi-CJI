@@ -625,6 +625,36 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCjiMedioCjiMedio extends Struct.CollectionTypeSchema {
+  collectionName: 'cji_medios';
+  info: {
+    displayName: 'CJI medios';
+    pluralName: 'cji-medios';
+    singularName: 'cji-medio';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    imagen: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cji-medio.cji-medio'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'link'> & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEntrevistasUrlEntrevistasUrl
   extends Struct.CollectionTypeSchema {
   collectionName: 'entrevistas_urls';
@@ -1314,6 +1344,7 @@ declare module '@strapi/strapi' {
       'api::banners-evento.banners-evento': ApiBannersEventoBannersEvento;
       'api::capsulas-legales-url.capsulas-legales-url': ApiCapsulasLegalesUrlCapsulasLegalesUrl;
       'api::category.category': ApiCategoryCategory;
+      'api::cji-medio.cji-medio': ApiCjiMedioCjiMedio;
       'api::entrevistas-url.entrevistas-url': ApiEntrevistasUrlEntrevistasUrl;
       'api::imagenes-pauta.imagenes-pauta': ApiImagenesPautaImagenesPauta;
       'api::new.new': ApiNewNew;
