@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "link": {
+    "Titulo": {
       "type": "string",
       "required": true
     },
@@ -22,6 +22,14 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "Contenido": {
+      "type": "text",
+      "required": true
     },
     "slug": {
       "type": "uid",
