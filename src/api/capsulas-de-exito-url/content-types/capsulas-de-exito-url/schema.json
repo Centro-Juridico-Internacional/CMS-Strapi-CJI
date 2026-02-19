@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "capsulas_de_exito_urls",
+  "info": {
+    "singularName": "capsulas-de-exito-url",
+    "pluralName": "capsulas-de-exito-urls",
+    "displayName": "Capsulas de éxito Url"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titulo": {
+      "type": "string",
+      "required": true
+    },
+    "CapsulaDeExitoURL": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

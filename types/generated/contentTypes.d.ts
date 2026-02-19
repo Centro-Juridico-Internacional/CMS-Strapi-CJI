@@ -557,6 +557,36 @@ export interface ApiBannersEventoBannersEvento
   };
 }
 
+export interface ApiCapsulasDeExitoUrlCapsulasDeExitoUrl
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'capsulas_de_exito_urls';
+  info: {
+    displayName: 'Capsulas de \u00E9xito Url';
+    pluralName: 'capsulas-de-exito-urls';
+    singularName: 'capsulas-de-exito-url';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CapsulaDeExitoURL: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::capsulas-de-exito-url.capsulas-de-exito-url'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Titulo: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCapsulasLegalesUrlCapsulasLegalesUrl
   extends Struct.CollectionTypeSchema {
   collectionName: 'capsulas_legales_urls';
@@ -1344,6 +1374,7 @@ declare module '@strapi/strapi' {
       'api::banner-actualidad-juridica-empresarial.banner-actualidad-juridica-empresarial': ApiBannerActualidadJuridicaEmpresarialBannerActualidadJuridicaEmpresarial;
       'api::banner.banner': ApiBannerBanner;
       'api::banners-evento.banners-evento': ApiBannersEventoBannersEvento;
+      'api::capsulas-de-exito-url.capsulas-de-exito-url': ApiCapsulasDeExitoUrlCapsulasDeExitoUrl;
       'api::capsulas-legales-url.capsulas-legales-url': ApiCapsulasLegalesUrlCapsulasLegalesUrl;
       'api::category.category': ApiCategoryCategory;
       'api::cji-medio.cji-medio': ApiCjiMedioCjiMedio;
